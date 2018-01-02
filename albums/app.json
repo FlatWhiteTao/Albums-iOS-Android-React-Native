@@ -1,9 +1,4 @@
 {
   "name": "albums",
-  "displayName": "albums",
-  "expo": {
-    "name": "albums",
-    "slug": "albums-tao",
-    "sdkVersion": "^24.0.2"
-  }
+  "displayName": "albums"
 }
