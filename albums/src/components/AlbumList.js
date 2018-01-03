@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
+import AlbumDetail from './AlbumDetail';
 
 class AlbumList extends Component {
 // Define component level state for the albumlist component
@@ -11,9 +12,14 @@ class AlbumList extends Component {
       .then((data) => this.setState({ albums: data }));
 }
 
+// As the sample data center connected does not provide data
+// with a uuid. so in this case, using the album title as a
+// key for now.
 renderAlbums() {
   if (this.state.albums) {
-    return this.state.albums.map(album => <Text>{album.title}</Text>);
+    return this.state.albums.map(album =>
+      <AlbumDetail key={album.title} album={album} />
+    );
   }
 }
 
